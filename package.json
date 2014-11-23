@@ -1,0 +1,15 @@
+{
+  "name": "node-zabbix-sendmail",
+  "version": "1.0.0",
+  "description": "Media to send mail on zabbix",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "OopsMouse",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.1.0",
+    "nodemailer": "^0.7.1"
+  }
+}

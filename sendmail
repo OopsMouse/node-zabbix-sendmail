@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+var debug = require('debug')('mailer')
+  , mailer = require('nodemailer')
+  , config = require('./config.json');
+
+if (process.argv.length < 5) {
+    console.error('failed');
+    return;
+}
+
+var to = process.argv[2]
+  , subject = process.argv[3]
+  , body = process.argv[4];
+
+debug('TO: ' + to);
+debug('SUBJECT: ' + subject);
+debug('BODY:');
+debug(body);
+
+var smtp = mailer.createTransport('SMTP', config);
+smtp.sendMail({
+  from: config.from,
+  to: to,
+  subject: subject,
+  text: body
+}, function(err, res) {
+  if (err) return console.error(err);
+  smtp.close();
+});

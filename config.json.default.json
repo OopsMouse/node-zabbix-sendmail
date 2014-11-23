@@ -1,0 +1,9 @@
+{
+  "host": "sample",
+  "auth": {
+    "user": "user",
+    "pass": "pass",
+    "port": "465"
+  },
+  "from": "node@sample.com"
+}
